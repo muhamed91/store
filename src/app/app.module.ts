@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StoreRootModule, StoreModule } from '@ngrx/store';
+import {reducer} from './reducers/user.reducer'
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({user: reducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
